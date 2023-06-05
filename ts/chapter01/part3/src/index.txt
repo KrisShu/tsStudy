@@ -1,0 +1,8 @@
+为了兼容不同浏览器运行，所以需要编译js的版本
+
+1.安装相关插件：
+cnpm i -D @babel/core @babel/preset-env babel-loader core-js
+
+2.在webpackconfig.json文件中配置
+
+
