@@ -46,7 +46,7 @@ e2 = true
 console.log(e2)
 
 let e3:unknown
-e3 = 'hello'
+e3 = 10
 let s:string; 
 // s = e3 //报错 unknown类型的变量，不能直接赋值给其他变量
 
