@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        // module指定要使用的模块化的规范
+        "module": "ES2015",
+        //target 用来指定ts编译后的es版本
+        "target": "ES2015",
+        //所有严格检查的总开关
+        "strict": true,
+    }
+}
