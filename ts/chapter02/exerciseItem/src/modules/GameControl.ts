@@ -80,13 +80,38 @@ class GameControl{
                 X += 10;
                 break;
         }
+        // 检测是否吃到食物
+        this.checkEat(X,Y);
+        try{
+            this.snake.X = X
+            this.snake.Y = Y
+        }catch(e){
+            // 进入catch,说明出现了异常，游戏结束，弹出一个提示信息
+            alert(e)
+            this.isLive = false
+        }
 
-        this.snake.X = X
-        this.snake.Y = Y
+      
+
+        console.log("this.scorePanel.level",this.scorePanel.level)
 
         // 开启一个定时器
-        this.isLive && setTimeout(this.run.bind(this),300 * (this.scorePanel.level-1)*30)
+        this.isLive && setTimeout(this.run.bind(this),300 - (this.scorePanel.level-1)*30)
 
+        // setTimeout(this.run.bind(this),300 * (this.scorePanel.level-1)*30)
+        
+
+    }
+    // 定义一个方法，用来检查蛇是否迟到食物
+    checkEat(X:number,Y:number){
+        if(X  === this.food.X && Y === this.food.Y){
+             // 食物的位置要进行重置
+             this.food.change();
+             // 分数增加
+             this.scorePanel.addScore();
+             // 蛇要增加已结
+             this.snake.addBody();
+        } 
     }
 }
 
